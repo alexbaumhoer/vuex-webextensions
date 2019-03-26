@@ -86,6 +86,7 @@ class BackgroundScript {
   }
 
   onMessage(connection, message) {
+    console.log(`${new Date().valueOf()} Received ${message.data.type} from ${connection.name}`);
     if (!message.type || message.type !== '@@STORE_SYNC_MUTATION') {
       return;
     }
@@ -95,6 +96,7 @@ class BackgroundScript {
   }
 
   sendMutation(connection, mutation) {
+    console.log(`${new Date().valueOf()} Sent ${mutation.type} to ${connection.name}`);
     connection.postMessage({
       type: '@@STORE_SYNC_MUTATION',
       data: mutation
