@@ -21,6 +21,7 @@ class ContentScript {
 
     // Listen for messages
     this.connection.onMessage.addListener((message) => {
+      console.log('Hello, I received a message!');
       this.onMessage(message);
     });
 
