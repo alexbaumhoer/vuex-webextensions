@@ -2,9 +2,9 @@
   "name": "vuex-webextensions",
   "version": "1.2.6",
   "description": "Use Vuex on WebExtensions on 'shared' context",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "files": [
-    "dist"
+    "src"
   ],
   "scripts": {
     "build": "rimraf dist && babel src -d dist",
