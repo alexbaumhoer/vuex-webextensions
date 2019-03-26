@@ -21,7 +21,7 @@ class ContentScript {
 
     // Listen for messages
     this.connection.onMessage.addListener((message) => {
-      console.log(`CS ${new Date().valueOf()} Received ${message.data.type} from ${connection.name}`);
+      console.log(`${new Date().valueOf()} CS received ${message.data.type} on ${this.connection.name}`);
       this.onMessage(message);
     });
 
@@ -73,6 +73,7 @@ class ContentScript {
   }
 
   sendMutation(mutation) {
+    console.log(`${new Date().valueOf()} Sent ${mutation.type} from ${this.connection.name}`);
     this.connection.postMessage({
       type: '@@STORE_SYNC_MUTATION',
       data: mutation
